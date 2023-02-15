@@ -33,5 +33,21 @@ document.getElementById('type-number').addEventListener('click', function (event
         const newInputValue = getInputValue + number;
         getInputFiled.value = newInputValue
     }
-
 })
+
+function matchPin() {
+    const generateInputFiled = document.getElementById('click-input').value;
+    const calculateInputFiled = document.getElementById('calculate-input-filed').value;
+
+    const right = document.getElementById('right');
+    const error = document.getElementById('error');
+
+    if (generateInputFiled == calculateInputFiled) {
+        right.style.display = 'block';
+        error.style.display = 'none';
+    }
+    else {
+        error.style.display = 'block';
+        right.style.display = 'none'
+    }
+}
