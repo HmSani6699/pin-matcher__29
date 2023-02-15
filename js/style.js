@@ -17,4 +17,21 @@ function getInputValue(id, value) {
 document.getElementById('generatePin').addEventListener('click', function () {
     const pinNumber = getPin();
     getInputValue('click-input', pinNumber);
+});
+
+document.getElementById('type-number').addEventListener('click', function (event) {
+    const number = event.target.innerText;
+    const calculateInputFiled = document.getElementById('calculate-input-filed');
+
+    if (isNaN(number)) {
+
+        if (number == "C") {
+            calculateInputFiled.value = '';
+        }
+    }
+    else {
+        const previousInputValue = calculateInputFiled.value;
+        const newInputValue = previousInputValue + number;
+        calculateInputFiled.value = newInputValue
+    }
 })
