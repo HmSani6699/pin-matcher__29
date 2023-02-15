@@ -22,6 +22,12 @@ document.getElementById('type-number').addEventListener('click', function (event
         if (number === 'C') {
             getInputFiled.value = '';
         }
+        else if (number == '<') {
+            let numberString = getInputValue + '';
+            let split = numberString.split('');
+            split.pop();
+            getInputFiled.value = split.join('')
+        }
     }
     else {
         const newInputValue = getInputValue + number;
